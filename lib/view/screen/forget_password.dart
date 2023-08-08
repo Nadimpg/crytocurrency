@@ -1,23 +1,18 @@
-
-
 import 'package:cyptocurrency/utiles/colors/app_colors.dart';
-import 'package:cyptocurrency/view/screen/forget_password.dart';
-import 'package:cyptocurrency/view/screen/otp_screen.dart';
-import 'package:cyptocurrency/view/screen/signup_screen.dart';
 import 'package:flutter/material.dart';
 
-class SignInScreen extends StatefulWidget {
-  const SignInScreen({super.key});
+class ForgetPassword extends StatefulWidget {
+  const ForgetPassword({super.key});
 
   @override
-  State<SignInScreen> createState() => _SignInScreenState();
+  State<ForgetPassword> createState() => _ForgetPasswordState();
 }
 
-class _SignInScreenState extends State<SignInScreen> {
-  bool isCheck = true;
+class _ForgetPasswordState extends State<ForgetPassword> {
+  bool isCheck=true;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return  Scaffold(
       backgroundColor: AppColors.secondaryColor,
       body: SingleChildScrollView(
         child: SizedBox(
@@ -68,18 +63,18 @@ class _SignInScreenState extends State<SignInScreen> {
                     keyboardType: TextInputType.text,
                     decoration: InputDecoration(
                         fillColor: AppColors.secondaryColor,
-                        hintText: 'Enter username',
+                        hintText: 'Enter New Password',
                         hintStyle: TextStyle(
                             letterSpacing: 1, color:Color(0xFF44555B)),
-                        labelText: 'Username',
+                        labelText: 'New Password',
                         labelStyle:
-                            TextStyle(color: AppColors.whiteColor, fontSize: 20),
+                        TextStyle(color: AppColors.whiteColor, fontSize: 20),
                         filled: true,
                         border: OutlineInputBorder(borderSide: BorderSide()),
                         focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(
-                          color: Color(0xFF5A6368),
-                        ))),
+                              color: Color(0xFF5A6368),
+                            ))),
                   ),
                 ),
                 const SizedBox(
@@ -90,25 +85,21 @@ class _SignInScreenState extends State<SignInScreen> {
                     maxLines: 1,
                     keyboardType: TextInputType.text,
 
-                    
                     decoration: InputDecoration(
-
                         fillColor: AppColors.secondaryColor,
-                        hintText: 'Enter password',
+                        hintText: 'Enter Confirm Password',
                         suffixIcon: Icon(Icons.remove_red_eye),
                         hintStyle: TextStyle(
                             letterSpacing: 1, color:Color(0xFF44555B)),
                         labelText: 'Password',
-
-
                         labelStyle:
-                            TextStyle(color: AppColors.whiteColor, fontSize: 20),
+                        TextStyle(color: AppColors.whiteColor, fontSize: 20),
                         filled: true,
                         border: OutlineInputBorder(borderSide: BorderSide()),
                         focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(
-                          color: Color(0xFF5A6368),
-                        ))),
+                              color: Color(0xFF5A6368),
+                            ))),
                   ),
                 ),
                 SizedBox(
@@ -153,7 +144,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       Spacer(),
                       TextButton(
                           onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (_)=>ForgetPassword()));
+
                           },
                           child: Text('Forgot password?',
                               style: TextStyle(
@@ -171,11 +162,9 @@ class _SignInScreenState extends State<SignInScreen> {
                   height: 50,
                   width: double.infinity,
                   child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (_)=>OtpScreen()));
-                      },
+                      onPressed: () {},
                       child: Text(
-                        'Sign in',
+                        'Reset Password',
                         style: TextStyle(color: AppColors.whiteColor),
                       ),
                       style: ElevatedButton.styleFrom(
@@ -185,30 +174,8 @@ class _SignInScreenState extends State<SignInScreen> {
                         backgroundColor: AppColors.primaryColor,
                       )),
                 ),
-                const SizedBox(
-                  height: 30,
-                ),
-                Center(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Dont have an account?',
-                        style:
-                            TextStyle(color: AppColors.whiteColor, fontSize: 18),
-                      ),
-                      GestureDetector(
-                          onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (_)=>SignupScreen()));
-                          },
-                          child: Text(
-                            'Register Now',
-                            style: TextStyle(
-                                color: AppColors.primaryColor, fontSize: 15),
-                          )),
-                    ],
-                  ),
-                )
+
+
               ],
             ),
           ),
